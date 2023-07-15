@@ -1,13 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import './style.css';
 import App from './App';
+import Data from './Data';
+import Header from './Components/Header.js';
 import reportWebVitals from './reportWebVitals';
+import Content from './Components/Content';
+
+const cards = Data.map(val=>{
+return(
+  <Content 
+  key ={val.title}
+  val = {val}
+  // img = {val.imageUrl}
+  // title = {val.title}
+  // location = {val.location}
+  // startDate = {val.startDate}
+  // endDate = {val.endDate}
+  // desc = {val.description}
+ />
+)
+
+
+});
+
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
+     <Header/>
+    {cards}
+    
   </React.StrictMode>
 );
 
